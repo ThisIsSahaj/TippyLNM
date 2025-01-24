@@ -41,15 +41,14 @@ const TipModal = ({ isOpen, onClose, recipientAddress, startupTitle }: TipModalP
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent  className="bg-white/20">
+      <DialogContent>
         <DialogHeader>
-          <DialogTitle className=" text-white  "> Send Tip for {startupTitle}</DialogTitle>
+          <DialogTitle>Send Tip for {startupTitle}</DialogTitle>
         </DialogHeader>
         <div className="space-y-4">
           <div>
-            <label className="text-sm text-white font-medium">Amount (Sepolia ETH)</label>
+            <label className="text-sm font-medium">Amount (Sepolia ETH)</label>
             <Input
-             className="text-white"
               type="number"
               step="0.001"
               value={amount}
@@ -60,7 +59,7 @@ const TipModal = ({ isOpen, onClose, recipientAddress, startupTitle }: TipModalP
           <Button
             onClick={handleTip}
             disabled={!amount || isLoading}
-            className="w-full bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% "
+            className="w-full"
           >
             {isLoading ? "Processing..." : "Send Tip"}
           </Button>

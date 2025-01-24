@@ -48,7 +48,7 @@
   }
 
   .pink_container {
-    @apply w-full bg-gradient-black-green min-h-[530px] pattern flex justify-center items-center flex-col py-10 px-6;
+    @apply w-full bg-primary min-h-[530px] pattern flex justify-center items-center flex-col py-10 px-6;
   }
 
   .tag {
@@ -56,7 +56,7 @@
   }
 
   .heading {
-    @apply uppercase  px-6 py-3 font-work-sans font-extrabold text-white sm:text-[54px] sm:leading-[64px] text-[36px] leading-[46px] max-w-5xl text-center my-5;
+    @apply uppercase bg-black px-6 py-3 font-work-sans font-extrabold text-white sm:text-[54px] sm:leading-[64px] text-[36px] leading-[46px] max-w-5xl text-center my-5;
   }
 
   .sub-heading {
@@ -133,11 +133,11 @@
 
   /* startupcard */
   .startup-card {
-    @apply bg-white border-[5px] border-black py-6 px-5 rounded-[22px] shadow-200 hover:border-primary transition-all duration-500 hover:shadow-300 ;
+    @apply bg-white border-[5px] border-black py-6 px-5 rounded-[22px] shadow-200 hover:border-primary transition-all duration-500 hover:shadow-300 hover:bg-primary-100;
   }
 
   .startup-card_date {
-    @apply font-medium text-[16px] bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90%  px-4 py-2 rounded-full group-hover:bg-white-100;
+    @apply font-medium text-[16px] bg-primary-100 px-4 py-2 rounded-full group-hover:bg-white-100;
   }
 
   .startup-card_desc {
@@ -182,7 +182,7 @@
   }
 
   .startup-form_btn {
-    @apply bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90%  border-[4px] border-black rounded-full p-5 min-h-[70px] w-full font-bold text-[18px] !important;
+    @apply bg-primary border-[4px] border-black rounded-full p-5 min-h-[70px] w-full font-bold text-[18px] !important;
   }
 
   /* view */
