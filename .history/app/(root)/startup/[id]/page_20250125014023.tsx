@@ -1,4 +1,3 @@
-'use client'
 import { Suspense, useState } from "react";
 import { client } from "@/sanity/lib/client";
 import {
@@ -20,10 +19,10 @@ import TipModal from "@/components/TipModal";
 const md = markdownit();
 
 export const experimental_ppr = true;
+const [isTipModalOpen, setIsTipModalOpen] = useState(false);
 
 const Page = async ({ params }: { params: Promise<{ id: string }> }) => {
   const id = (await params).id;
-  const [isTipModalOpen, setIsTipModalOpen] = useState(false);
 
   const [post, editorPosts] = await Promise.all([
     client.fetch(STARTUP_BY_ID_QUERY, { id }),
@@ -77,7 +76,6 @@ const Page = async ({ params }: { params: Promise<{ id: string }> }) => {
 
             <div className="flex gap-3 items-center">
               {post.author.walletAddress && (
-                <>
                  <Button
                  onClick={() => setIsTipModalOpen(true)}
                  className="category-tag"
@@ -89,10 +87,10 @@ const Page = async ({ params }: { params: Promise<{ id: string }> }) => {
                 <TipModal
                 isOpen={isTipModalOpen}
                 onClose={() => setIsTipModalOpen(false)}
-                recipientAddress={post.author.walletAddress}
-                startupTitle={post.title}
+                recipientAddress={author.walletAddress}
+                startupTitle={title}
                 />
-                </>
+              )}
               )}
               <p className="category-tag">{post.category}</p>
             </div>
@@ -123,9 +121,9 @@ const Page = async ({ params }: { params: Promise<{ id: string }> }) => {
           </div>
         )}
 
-        {/* <Suspense fallback={<Skeleton className="view_skeleton" />}>
+        <Suspense fallback={<Skeleton className="view_skeleton" />}>
           <View id={id} />
-        </Suspense> */}
+        </Suspense>
       </section>
     </>
   );
