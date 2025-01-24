@@ -8,9 +8,9 @@ export const WalletButton = () => {
   return (
     <Button 
       onClick={isConnected ? disconnectWallet : connectWallet}
-      className="bg-black text-white"
+      className="bg-black text-white hover:bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% "
     >
       {isConnected ? formatAddress(address) : "Connect Wallet"}
     </Button>
   );
-}; 
+};
