@@ -20,7 +20,7 @@ export default async function Home({
 
   return (
     <>
-      <section className="pink_container">
+<section className="w-full min-h-[530px] bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% flex justify-center items-center flex-col py-10 px-6">
         <h1 className="heading">
           Pitch Your Startup, <br />
           Connect With Entrepreneurs
@@ -54,3 +54,4 @@ export default async function Home({
     </>
   );
 }
+
