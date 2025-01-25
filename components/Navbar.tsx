@@ -1,3 +1,4 @@
+'use client'
 import Link from "next/link";
 import Image from "next/image";
 import { auth } from "@/auth";
@@ -5,19 +6,28 @@ import { BadgePlus, LogOut } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { handleSignIn, handleSignOut } from "@/app/actions";
 import { WalletButton } from "./NavbarClient";
+import SearchForm from "./SearchForm";
+import { useSearchParams } from "next/navigation";
 
-const Navbar = async () => {
-  const session = await auth();
+// const Navbar = async () => {
+  const Navbar = ({ session }: { session: any }) => {
+  // const session = await auth();
+
+  const searchParams = useSearchParams();
+  const query = searchParams.get("query") || "";
 
   return (
-    <header className="px-5 py-3 bg-white shadow-sm font-work-sans">
+    <header className="px-5 py-3 bg-white shadow-sm font-work-sans fixed w-full z-10 ">
       <nav className="flex justify-between items-center">
         
-        <Link href="/" className="flex items-center gap-2">
-          <p className="text-2xl font-bold">Tip-OnChain</p>
+        <Link href="/" className="items-center gap-4 w-full hidden sm:flex">
+          <p className="text-2xl font-bold">ArtTipia</p>
           <span className="px-2 py-1.5 text-xs font-semibold text-gray-800 bg-gray-100 border border-gray-200 rounded-lg dark:bg-gray-600 dark:text-gray-100 dark:border-gray-500">Beta</span>
-          {/* <Image src="/logo.png" alt="logo" width={144} height={30} /> */}
         </Link>
+        
+        <div className="hidden sm:block w-full">
+        <SearchForm query={query} />
+        </div>
 
         <div className="flex items-center gap-5 text-black">
           {session && session?.user ? (
