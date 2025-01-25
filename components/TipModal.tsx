@@ -47,7 +47,7 @@ const TipModal = ({ isOpen, onClose, recipientAddress, startupTitle }: TipModalP
         </DialogHeader>
         <div className="space-y-4">
           <div>
-            <label className="text-sm text-white font-medium">Amount (Sepolia ETH)</label>
+            <label className="text-sm text-white font-medium">Amount (EDU)</label>
             <Input
              className="text-white"
               type="number"

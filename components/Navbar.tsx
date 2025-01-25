@@ -22,7 +22,7 @@ import { useSearchParams } from "next/navigation";
         
         <Link href="/" className="items-center gap-4 w-full hidden sm:flex">
           <img src="/arttipia.svg" alt="arttipia logo" height={60} width={60} />
-          <p className="text-2xl font-bold">ArtTipia</p>
+          <p className="text-2xl font-bold">Tippy</p>
           <span className="px-2 py-1.5 text-xs font-semibold text-gray-800 bg-gray-100 border border-gray-200 rounded-lg dark:bg-gray-600 dark:text-gray-100 dark:border-gray-500">Beta</span>
         </Link>
         
