@@ -28,13 +28,13 @@ const StartupCard = ({ post }: { post: StartupTypeCard }) => {
   const [isTipModalOpen, setIsTipModalOpen] = useState(false);
   const { isConnected } = useWallet();
 
-  // console.log('Full author data:', author);
-  // console.log('Debug:', {
-  //   isConnected,
-  //   authorWallet: author?.walletAddress,
-  //   authorId: author?._id,
-  //   authorEmail: author?.email
-  // });
+  console.log('Full author data:', author);
+  console.log('Debug:', {
+    isConnected,
+    authorWallet: author?.walletAddress,
+    authorId: author?._id,
+    authorEmail: author?.email
+  });
 
   return (
 
@@ -129,13 +129,6 @@ const StartupCard = ({ post }: { post: StartupTypeCard }) => {
             <p className="text-sm text-gray-500">{formatDate(_createdAt)}</p>
           </Link>
         </div>
-
-        <span className="p-2 flex items-center gap-2">
-        <EyeIcon className="size-6 text-black" />
-        <span className="text-16-medium">{views}</span>
-        </span>
-
-       
       </div>
 
 
@@ -148,29 +141,29 @@ const StartupCard = ({ post }: { post: StartupTypeCard }) => {
         </Link>
 
 
-        <h2 className="font-normal my-2 h-10 text-sm text-zinc-500 line-clamp-2">
+        <h2 className="font-normal my-2 h-10 border text-sm text-zinc-500 line-clamp-2">
           {description}
         </h2>
 
 
-        <div className="flex flex-row justify-between items-center mt-10 mb-4">
+        <div className="flex flex-row justify-between items-center mt-10">
           {isConnected && author?.walletAddress && (
-            <button type="button" className="text-white bg-black hover:bg-black/80 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 flex items-center justify-center"
-              onClick={() => setIsTipModalOpen(true)}
-            >
+                <button type="button" className="text-white bg-black hover:bg-black/80 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 flex items-center justify-center"
+                  onClick={() => setIsTipModalOpen(true)}
+                >
 
-              <svg className="w-3.5 h-3.5 me-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 256 417">
-                <path d="M127.9 0L127.1 2.7V278.7L127.9 279.5L255.8 208.4L127.9 0Z" />
-                <path d="M127.9 0L0 208.4L127.9 279.5V149.5V0Z" />
-                <path d="M127.9 302.3L127.4 302.9V414.6L127.9 416.3L255.8 232.4L127.9 302.3Z" />
-                <path d="M127.9 416.3V302.3L0 232.4L127.9 416.3Z" />
-                <path d="M127.9 279.5L255.8 208.4L127.9 149.5V279.5Z" />
-                <path d="M0 208.4L127.9 279.5V149.5L0 208.4Z" />
-              </svg>
-              <p>Tip Creator</p>
-            </button>
+                  <svg className="w-3.5 h-3.5 me-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 256 417">
+                    <path d="M127.9 0L127.1 2.7V278.7L127.9 279.5L255.8 208.4L127.9 0Z" />
+                    <path d="M127.9 0L0 208.4L127.9 279.5V149.5V0Z" />
+                    <path d="M127.9 302.3L127.4 302.9V414.6L127.9 416.3L255.8 232.4L127.9 302.3Z" />
+                    <path d="M127.9 416.3V302.3L0 232.4L127.9 416.3Z" />
+                    <path d="M127.9 279.5L255.8 208.4L127.9 149.5V279.5Z" />
+                    <path d="M0 208.4L127.9 279.5V149.5L0 208.4Z" />
+                  </svg>
+                  <p>Tip Creator</p>
+                </button>
           )}
-
+          
           {isTipModalOpen && author?.walletAddress && (
             <TipModal
               isOpen={isTipModalOpen}

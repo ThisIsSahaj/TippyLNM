@@ -28,13 +28,13 @@ const StartupCard = ({ post }: { post: StartupTypeCard }) => {
   const [isTipModalOpen, setIsTipModalOpen] = useState(false);
   const { isConnected } = useWallet();
 
-  // console.log('Full author data:', author);
-  // console.log('Debug:', {
-  //   isConnected,
-  //   authorWallet: author?.walletAddress,
-  //   authorId: author?._id,
-  //   authorEmail: author?.email
-  // });
+  console.log('Full author data:', author);
+  console.log('Debug:', {
+    isConnected,
+    authorWallet: author?.walletAddress,
+    authorId: author?._id,
+    authorEmail: author?.email
+  });
 
   return (
 

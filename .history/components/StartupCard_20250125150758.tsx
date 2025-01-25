@@ -28,13 +28,13 @@ const StartupCard = ({ post }: { post: StartupTypeCard }) => {
   const [isTipModalOpen, setIsTipModalOpen] = useState(false);
   const { isConnected } = useWallet();
 
-  // console.log('Full author data:', author);
-  // console.log('Debug:', {
-  //   isConnected,
-  //   authorWallet: author?.walletAddress,
-  //   authorId: author?._id,
-  //   authorEmail: author?.email
-  // });
+  console.log('Full author data:', author);
+  console.log('Debug:', {
+    isConnected,
+    authorWallet: author?.walletAddress,
+    authorId: author?._id,
+    authorEmail: author?.email
+  });
 
   return (
 
@@ -109,7 +109,7 @@ const StartupCard = ({ post }: { post: StartupTypeCard }) => {
       <div className="w-full aspect-w-16 aspect-h-10 bg-white rounded-tr-lg rounded-tl-lg overflow-hidden xl:aspect-w-16 xl:aspect-h-10 relative">
         <Link href={`/startup/${_id}`}>
           <img src={image} alt="placeholder"
-            className="startup-card_img group-hover:scale-95 group-hover:rounded-2xl transform object-cover transition duration-200" />
+            className="startup-card_img group-hover:scale-95 group-hover:rounded-2xl transform transition duration-200" />
         </Link>
       </div>
 

@@ -28,13 +28,13 @@ const StartupCard = ({ post }: { post: StartupTypeCard }) => {
   const [isTipModalOpen, setIsTipModalOpen] = useState(false);
   const { isConnected } = useWallet();
 
-  // console.log('Full author data:', author);
-  // console.log('Debug:', {
-  //   isConnected,
-  //   authorWallet: author?.walletAddress,
-  //   authorId: author?._id,
-  //   authorEmail: author?.email
-  // });
+  console.log('Full author data:', author);
+  console.log('Debug:', {
+    isConnected,
+    authorWallet: author?.walletAddress,
+    authorId: author?._id,
+    authorEmail: author?.email
+  });
 
   return (
 
@@ -130,12 +130,9 @@ const StartupCard = ({ post }: { post: StartupTypeCard }) => {
           </Link>
         </div>
 
-        <span className="p-2 flex items-center gap-2">
-        <EyeIcon className="size-6 text-black" />
-        <span className="text-16-medium">{views}</span>
-        </span>
-
-       
+        <div className="flex items-center justify-center w-[3rem] h-[1.4rem] rounded-md mt-[-0.5rem] bg-[#444857]">
+          <svg className="views_svg" viewBox="0 0 30.5 16.5"><path d="M15.3 0C8.9 0 3.3 3.3 0 8.3c3.3 5 8.9 8.3 15.3 8.3s12-3.3 15.3-8.3C27.3 3.3 21.7 0 15.3 0zm0 14.5c-3.4 0-6.2-2.8-6.2-6.2C9 4.8 11.8 2 15.3 2c3.4 0 6.2 2.8 6.2 6.2 0 3.5-2.8 6.3-6.2 6.3z"></path></svg><span className="views_text">332</span>
+        </div>
       </div>
 
 
@@ -153,7 +150,7 @@ const StartupCard = ({ post }: { post: StartupTypeCard }) => {
         </h2>
 
 
-        <div className="flex flex-row justify-between items-center mt-10 mb-4">
+        <div className="flex flex-row justify-between items-center mt-10">
           {isConnected && author?.walletAddress && (
             <button type="button" className="text-white bg-black hover:bg-black/80 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 flex items-center justify-center"
               onClick={() => setIsTipModalOpen(true)}

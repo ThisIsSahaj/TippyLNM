@@ -28,13 +28,13 @@ const StartupCard = ({ post }: { post: StartupTypeCard }) => {
   const [isTipModalOpen, setIsTipModalOpen] = useState(false);
   const { isConnected } = useWallet();
 
-  // console.log('Full author data:', author);
-  // console.log('Debug:', {
-  //   isConnected,
-  //   authorWallet: author?.walletAddress,
-  //   authorId: author?._id,
-  //   authorEmail: author?.email
-  // });
+  console.log('Full author data:', author);
+  console.log('Debug:', {
+    isConnected,
+    authorWallet: author?.walletAddress,
+    authorId: author?._id,
+    authorEmail: author?.email
+  });
 
   return (
 
@@ -130,10 +130,8 @@ const StartupCard = ({ post }: { post: StartupTypeCard }) => {
           </Link>
         </div>
 
-        <span className="p-2 flex items-center gap-2">
-        <EyeIcon className="size-6 text-black" />
+        <EyeIcon className="size-6 text-primary" />
         <span className="text-16-medium">{views}</span>
-        </span>
 
        
       </div>
@@ -153,7 +151,7 @@ const StartupCard = ({ post }: { post: StartupTypeCard }) => {
         </h2>
 
 
-        <div className="flex flex-row justify-between items-center mt-10 mb-4">
+        <div className="flex flex-row justify-between items-center mt-10">
           {isConnected && author?.walletAddress && (
             <button type="button" className="text-white bg-black hover:bg-black/80 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 flex items-center justify-center"
               onClick={() => setIsTipModalOpen(true)}
