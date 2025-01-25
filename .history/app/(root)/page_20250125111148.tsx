@@ -22,12 +22,13 @@ export default async function Home({
     <>
 <section className="w-full min-h-[530px] bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% flex justify-center items-center flex-col py-10 px-6">
         <h1 className="heading">
-          Tip Your Favorite Content , <br />
-          Creators and Get Noticed
+          Upload Your Content, <br />
+          And Get Tipped
         </h1>
 
         <p className="sub-heading !max-w-3xl">
-          Submit Posts, Get Noticed, and Get Tipped
+          Submit Ideas, Vote on Pitches, and Get Noticed in Virtual
+          Competitions.
         </p>
 
         <SearchForm query={query} />
@@ -35,7 +36,7 @@ export default async function Home({
 
       <section className="section_container">
         <p className="text-30-semibold">
-          {query ? `Search results for "${query}"` : "All Posts"}
+          {query ? `Search results for "${query}"` : "All Startups"}
         </p>
 
         <ul className="mt-7 card_grid">
@@ -44,7 +45,7 @@ export default async function Home({
               <StartupCard key={post?._id} post={post} />
             ))
           ) : (
-            <p className="no-results">No posts found</p>
+            <p className="no-results">No startups found</p>
           )}
         </ul>
       </section>

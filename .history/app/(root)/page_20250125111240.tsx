@@ -35,7 +35,7 @@ export default async function Home({
 
       <section className="section_container">
         <p className="text-30-semibold">
-          {query ? `Search results for "${query}"` : "All Posts"}
+          {query ? `Search results for "${query}"` : "All Startups"}
         </p>
 
         <ul className="mt-7 card_grid">
@@ -44,7 +44,7 @@ export default async function Home({
               <StartupCard key={post?._id} post={post} />
             ))
           ) : (
-            <p className="no-results">No posts found</p>
+            <p className="no-results">No startups found</p>
           )}
         </ul>
       </section>

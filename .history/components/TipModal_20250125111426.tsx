@@ -41,7 +41,7 @@ const TipModal = ({ isOpen, onClose, recipientAddress, startupTitle }: TipModalP
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent  className="bg-black">
+      <DialogContent  className="bg-na">
         <DialogHeader>
           <DialogTitle className=" text-white  "> Send Tip for {startupTitle}</DialogTitle>
         </DialogHeader>
@@ -54,7 +54,7 @@ const TipModal = ({ isOpen, onClose, recipientAddress, startupTitle }: TipModalP
               step="0.001"
               value={amount}
               onChange={(e) => setAmount(e.target.value)}
-              placeholder="Enter Tip Amount Like 0.01"
+              placeholder="0.01"
             />
           </div>
           <Button

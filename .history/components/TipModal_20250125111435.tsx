@@ -54,7 +54,7 @@ const TipModal = ({ isOpen, onClose, recipientAddress, startupTitle }: TipModalP
               step="0.001"
               value={amount}
               onChange={(e) => setAmount(e.target.value)}
-              placeholder="Enter Tip Amount Like 0.01"
+              placeholder="0.01"
             />
           </div>
           <Button
