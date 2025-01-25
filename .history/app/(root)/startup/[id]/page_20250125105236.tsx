@@ -1,4 +1,4 @@
-import { Suspense } from "react";
+import { Suspense, useState } from "react";
 import { client } from "@/sanity/lib/client";
 import {
   PLAYLIST_BY_SLUG_QUERY,
@@ -13,14 +13,38 @@ import markdownit from "markdown-it";
 import { Skeleton } from "@/components/ui/skeleton";
 import View from "@/components/View";
 import StartupCard, { StartupTypeCard } from "@/components/StartupCard";
-
+import { Button } from "@/components/ui/button";
+import TipModal from "@/components/TipModal";
 
 const md = markdownit();
 
 export const experimental_ppr = true;
 
-const Page = async ({ params }: { params: Promise<{ id: string }> }) => {
-  const id = (await params).id;
+const TipButton = ({ walletAddress, title }: { walletAddress: string, title: string }) => {
+  const [isTipModalOpen, setIsTipModalOpen] = useState(false);
+  
+  return (
+    <>
+      <Button
+        onClick={() => setIsTipModalOpen(true)}
+        className="category-tag"
+        variant="outline"
+      >
+        Tip
+      </Button>
+
+      <TipModal
+        isOpen={isTipModalOpen}
+        onClose={() => setIsTipModalOpen(false)}
+        recipientAddress={walletAddress}
+        startupTitle={title}
+      />
+    </>
+  );
+};
+
+const Page = async ({ params }: { params: { id: string } }) => {
+  const { id } = params;
 
   const [post, editorPosts] = await Promise.all([
     client.fetch(STARTUP_BY_ID_QUERY, { id }),
@@ -73,6 +97,12 @@ const Page = async ({ params }: { params: Promise<{ id: string }> }) => {
             </Link>
 
             <div className="flex gap-3 items-center">
+              {post.author.walletAddress && (
+                <TipButton 
+                  walletAddress={post.author.walletAddress}
+                  title={post.title}
+                />
+              )}
               <p className="category-tag">{post.category}</p>
             </div>
           </div>
@@ -102,9 +132,9 @@ const Page = async ({ params }: { params: Promise<{ id: string }> }) => {
           </div>
         )}
 
-        <Suspense fallback={<Skeleton className="view_skeleton" />}>
+        {/* <Suspense fallback={<Skeleton className="view_skeleton" />}>
           <View id={id} />
-        </Suspense>
+        </Suspense> */}
       </section>
     </>
   );
