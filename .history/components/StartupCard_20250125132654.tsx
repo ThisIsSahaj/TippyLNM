@@ -104,7 +104,7 @@ const StartupCard = ({ post }: { post: StartupTypeCard }) => {
     //   )}
     // </li>
 
-    <div className="relative overflow-hidden h-full rounded-2xl transition duration-200 group bg-white hover:shadow-xl border border-zinc-200">
+    <div className="relative overflow-hidden h-full rounded-2xl transition duration-200 group bg-white hover:shadow-xl border border-zinc-100">
       <div className="w-full aspect-w-16 aspect-h-10 bg-white rounded-tr-lg rounded-tl-lg overflow-hidden xl:aspect-w-16 xl:aspect-h-10 relative">
         <Link href={`/startup/${_id}`}>
           <img src={image} alt="placeholder"
@@ -113,7 +113,7 @@ const StartupCard = ({ post }: { post: StartupTypeCard }) => {
       </div>
 
       <div className="flex mt-5 gap-2 px-4">
-        <div className="flex w-full gap-4">
+        <div className="flex w-full border gap-4">
         <Link href={`/user/${author?._id}`}>
           <Image
             src={author?.image!}
@@ -125,7 +125,7 @@ const StartupCard = ({ post }: { post: StartupTypeCard }) => {
         </Link>
           <Link href={`/user/${author?._id}`}>
             <p className="font-semibold line-clamp-1">{author?.name}</p>
-            <p className="text-sm text-zinc-500">{author?.username}</p>
+            <p className="text-sm text-zinc-500 border">{author?.username}</p>
           </Link>
         </div>
       </div>

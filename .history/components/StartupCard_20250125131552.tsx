@@ -104,43 +104,22 @@ const StartupCard = ({ post }: { post: StartupTypeCard }) => {
     //   )}
     // </li>
 
-    <div className="relative overflow-hidden h-full rounded-2xl transition duration-200 group bg-white hover:shadow-xl border border-zinc-200">
+    <div className="relative overflow-hidden h-full rounded-2xl transition duration-200 group bg-white hover:shadow-xl border border-zinc-100">
       <div className="w-full aspect-w-16 aspect-h-10 bg-white rounded-tr-lg rounded-tl-lg overflow-hidden xl:aspect-w-16 xl:aspect-h-10 relative">
         <Link href={`/startup/${_id}`}>
           <img src={image} alt="placeholder"
             className="startup-card_img group-hover:scale-95 group-hover:rounded-2xl transform object-cover transition duration-200" />
         </Link>
       </div>
-
-      <div className="flex mt-5 gap-2 px-4">
-        <div className="flex w-full gap-4">
-        <Link href={`/user/${author?._id}`}>
-          <Image
-            src={author?.image!}
-            alt={author?.name!}
-            width={48}
-            height={48}
-            className="rounded-full"
-          />
-        </Link>
-          <Link href={`/user/${author?._id}`}>
-            <p className="font-semibold line-clamp-1">{author?.name}</p>
-            <p className="text-sm text-zinc-500">{author?.username}</p>
-          </Link>
-        </div>
-      </div>
-
-
-
-      <div className="p-4">
+      <div className=" p-4">
         <Link href={`/startup/${_id}`}>
-          <h2 className="font-bold mt-2 text-lg text-zinc-700">
+          <h2 className="font-bold my-4 text-lg text-zinc-700">
             {title}
           </h2>
         </Link>
+       
 
-
-        <h2 className="font-normal mt-2 text-sm text-zinc-500 line-clamp-2">
+        <h2 className="font-normal my-4 text-sm text-zinc-500 line-clamp-2">
           {description}
         </h2>
         <div className="flex flex-row justify-between items-center mt-10">

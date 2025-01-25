@@ -104,43 +104,18 @@ const StartupCard = ({ post }: { post: StartupTypeCard }) => {
     //   )}
     // </li>
 
-    <div className="relative overflow-hidden h-full rounded-2xl transition duration-200 group bg-white hover:shadow-xl border border-zinc-200">
+    <div className="relative overflow-hidden h-full rounded-2xl transition duration-200 group bg-white hover:shadow-xl border border-zinc-100">
       <div className="w-full aspect-w-16 aspect-h-10 bg-white rounded-tr-lg rounded-tl-lg overflow-hidden xl:aspect-w-16 xl:aspect-h-10 relative">
         <Link href={`/startup/${_id}`}>
           <img src={image} alt="placeholder"
             className="startup-card_img group-hover:scale-95 group-hover:rounded-2xl transform object-cover transition duration-200" />
         </Link>
       </div>
-
-      <div className="flex mt-5 gap-2 px-4">
-        <div className="flex w-full gap-4">
-        <Link href={`/user/${author?._id}`}>
-          <Image
-            src={author?.image!}
-            alt={author?.name!}
-            width={48}
-            height={48}
-            className="rounded-full"
-          />
-        </Link>
-          <Link href={`/user/${author?._id}`}>
-            <p className="font-semibold line-clamp-1">{author?.name}</p>
-            <p className="text-sm text-zinc-500">{author?.username}</p>
-          </Link>
-        </div>
-      </div>
-
-
-
-      <div className="p-4">
-        <Link href={`/startup/${_id}`}>
-          <h2 className="font-bold mt-2 text-lg text-zinc-700">
-            {title}
-          </h2>
-        </Link>
-
-
-        <h2 className="font-normal mt-2 text-sm text-zinc-500 line-clamp-2">
+      <div className=" p-4">
+        <h2 className="font-bold my-4 text-lg text-zinc-700">
+          Title
+        </h2>
+        <h2 className="font-normal my-4 text-sm text-zinc-500 line-clamp-2">
           {description}
         </h2>
         <div className="flex flex-row justify-between items-center mt-10">
@@ -157,21 +132,13 @@ const StartupCard = ({ post }: { post: StartupTypeCard }) => {
                 Tip
               </div> */}
 
-              <button type="button" className="text-white bg-black hover:bg-black/80 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 flex items-center justify-center"
-                onClick={() => setIsTipModalOpen(true)}
-              >
-
-                <svg className="w-3.5 h-3.5 me-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 256 417">
-                  <path d="M127.9 0L127.1 2.7V278.7L127.9 279.5L255.8 208.4L127.9 0Z" />
-                  <path d="M127.9 0L0 208.4L127.9 279.5V149.5V0Z" />
-                  <path d="M127.9 302.3L127.4 302.9V414.6L127.9 416.3L255.8 232.4L127.9 302.3Z" />
-                  <path d="M127.9 416.3V302.3L0 232.4L127.9 416.3Z" />
-                  <path d="M127.9 279.5L255.8 208.4L127.9 149.5V279.5Z" />
-                  <path d="M0 208.4L127.9 279.5V149.5L0 208.4Z" />
+              <button type="button" className="text-white bg-black hover:bg-black/80 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center me-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                <svg className="w-3.5 h-3.5 me-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 21">
+                  <path d="M15 12a1 1 0 0 0 .962-.726l2-7A1 1 0 0 0 17 3H3.77L3.175.745A1 1 0 0 0 2.208 0H1a1 1 0 0 0 0 2h.438l.6 2.255v.019l2 7 .746 2.986A3 3 0 1 0 9 17a2.966 2.966 0 0 0-.184-1h2.368c-.118.32-.18.659-.184 1a3 3 0 1 0 3-3H6.78l-.5-2H15Z" />
                 </svg>
-                <p>Tip</p>
+                Tip
               </button>
-
+             
 
 
             </>
@@ -198,11 +165,11 @@ const StartupCard = ({ post }: { post: StartupTypeCard }) => {
             </div> */}
 
             <button type="button" className="text-white bg-black hover:bg-black/80 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-              Read More
-              <svg className="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
-              </svg>
-            </button>
+                Choose plan
+                <svg className="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
+                </svg>
+              </button>
 
 
           </Link>

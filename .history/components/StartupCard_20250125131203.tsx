@@ -104,43 +104,18 @@ const StartupCard = ({ post }: { post: StartupTypeCard }) => {
     //   )}
     // </li>
 
-    <div className="relative overflow-hidden h-full rounded-2xl transition duration-200 group bg-white hover:shadow-xl border border-zinc-200">
+    <div className="relative overflow-hidden h-full rounded-2xl transition duration-200 group bg-white hover:shadow-xl border border-zinc-100">
       <div className="w-full aspect-w-16 aspect-h-10 bg-white rounded-tr-lg rounded-tl-lg overflow-hidden xl:aspect-w-16 xl:aspect-h-10 relative">
         <Link href={`/startup/${_id}`}>
           <img src={image} alt="placeholder"
             className="startup-card_img group-hover:scale-95 group-hover:rounded-2xl transform object-cover transition duration-200" />
         </Link>
       </div>
-
-      <div className="flex mt-5 gap-2 px-4">
-        <div className="flex w-full gap-4">
-        <Link href={`/user/${author?._id}`}>
-          <Image
-            src={author?.image!}
-            alt={author?.name!}
-            width={48}
-            height={48}
-            className="rounded-full"
-          />
-        </Link>
-          <Link href={`/user/${author?._id}`}>
-            <p className="font-semibold line-clamp-1">{author?.name}</p>
-            <p className="text-sm text-zinc-500">{author?.username}</p>
-          </Link>
-        </div>
-      </div>
-
-
-
-      <div className="p-4">
-        <Link href={`/startup/${_id}`}>
-          <h2 className="font-bold mt-2 text-lg text-zinc-700">
-            {title}
-          </h2>
-        </Link>
-
-
-        <h2 className="font-normal mt-2 text-sm text-zinc-500 line-clamp-2">
+      <div className=" p-4">
+        <h2 className="font-bold my-4 text-lg text-zinc-700">
+          Title
+        </h2>
+        <h2 className="font-normal my-4 text-sm text-zinc-500 line-clamp-2">
           {description}
         </h2>
         <div className="flex flex-row justify-between items-center mt-10">
@@ -157,10 +132,7 @@ const StartupCard = ({ post }: { post: StartupTypeCard }) => {
                 Tip
               </div> */}
 
-              <button type="button" className="text-white bg-black hover:bg-black/80 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 flex items-center justify-center"
-                onClick={() => setIsTipModalOpen(true)}
-              >
-
+              <button type="button" className="text-white bg-black hover:bg-black/80 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 flex items-center justify-center">
                 <svg className="w-3.5 h-3.5 me-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 256 417">
                   <path d="M127.9 0L127.1 2.7V278.7L127.9 279.5L255.8 208.4L127.9 0Z" />
                   <path d="M127.9 0L0 208.4L127.9 279.5V149.5V0Z" />
