@@ -3,6 +3,7 @@ import StartupCard, { StartupTypeCard } from "@/components/StartupCard";
 import { STARTUPS_QUERY } from "@/sanity/lib/queries";
 import { sanityFetch, SanityLive } from "@/sanity/lib/live";
 import { auth } from "@/auth";
+import { HeroVideoDialogDemo } from "./../../components/VideoBox";
 
 export default async function Home({
   searchParams,
@@ -20,16 +21,20 @@ export default async function Home({
 
   return (
     <>
-<section className="w-full min-h-[530px] bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% flex justify-center items-center flex-col py-10 px-6">
-        <h1 className="heading">
+      <section className=" w-full min-h-[530px] bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% flex justify-center items-center flex-col py-10 px-6">
+       
+     
+        <h1 className="heading ">
           Tip Your Favorite Content <br />
           Creators and Get Noticed
         </h1>
 
-        <p className="sub-heading !max-w-3xl">
+        <p className="sub-heading mb-4 !max-w-3xl">
           Submit Posts, Get Noticed, and Get Tipped
         </p>
 
+        <HeroVideoDialogDemo />
+        {/* <SearchForm query={query} /> */}
       </section>
 
       <section className="section_container">
@@ -52,4 +57,3 @@ export default async function Home({
     </>
   );
 }
-
