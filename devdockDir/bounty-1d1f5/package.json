@@ -1,0 +1,14 @@
+{
+  "name": "flow-bounty-system",
+  "version": "1.0.0",
+  "description": "Flow blockchain bounty system",
+  "scripts": {
+    "start": "flow emulator",
+    "deploy": "flow project deploy",
+    "test": "flow test"
+  },
+  "dependencies": {
+    "@onflow/fcl": "^1.3.2",
+    "@onflow/types": "^1.0.5"
+  }
+}
