@@ -56,7 +56,7 @@ const workSans = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Content Tipping",
+  title: "Tippy | LNM Hacks 7",
   description: "Tip your favorite content creators",
 };
 

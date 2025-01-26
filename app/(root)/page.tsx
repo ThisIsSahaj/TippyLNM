@@ -32,6 +32,7 @@ export default async function Home({
         <p className="sub-heading mb-4 !max-w-3xl">
           Submit Posts, Get Noticed, and Get Tipped
         </p>
+
         <HeroVideoDialogDemo />
         {/* <SearchForm query={query} /> */}
       </section>
