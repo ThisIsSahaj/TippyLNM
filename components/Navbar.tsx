@@ -18,19 +18,19 @@ import { useSearchParams } from "next/navigation";
 
   return (
     <header className="px-5 py-3 bg-white shadow-sm font-work-sans fixed w-full z-10 ">
-      <nav className="flex justify-between items-center">
+      <nav className="justify-between items-center grid grid-cols-5">
         
-        <Link href="/" className="items-center gap-4 w-full hidden sm:flex">
+        <Link href="/" className="items-center gap-4 w-full hidden sm:flex col-span-1">
           <img src="/arttipia.svg" alt="arttipia logo" height={60} width={60} />
           <p className="text-2xl font-bold">Tippy</p>
           <span className="px-2 py-1.5 text-xs font-semibold text-gray-800 bg-gray-100 border border-gray-200 rounded-lg dark:bg-gray-600 dark:text-gray-100 dark:border-gray-500">Beta</span>
         </Link>
         
-        <div className="hidden sm:block w-full">
+        <div className="hidden sm:block w-full  col-span-3">
         <SearchForm query={query} />
         </div>
 
-        <div className="flex items-center gap-5 text-black">
+        <div className="flex items-center gap-5 text-black  col-span-1">
           {session && session?.user ? (
             <>
               <WalletButton />

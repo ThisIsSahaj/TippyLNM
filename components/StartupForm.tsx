@@ -35,7 +35,7 @@ const StartupForm = () => {
       if (result.status == "SUCCESS") {
         toast({
           title: "Success",
-          description: "Your startup pitch has been created successfully",
+          description: "Your content has been published successfully",
         });
 
         router.push(`/startup/${result._id}`);
@@ -87,7 +87,7 @@ const StartupForm = () => {
           name="title"
           className="startup-form_input"
           required
-          placeholder="Startup Title"
+          placeholder="Content Title"
         />
 
         {errors.title && <p className="startup-form_error">{errors.title}</p>}
@@ -102,7 +102,7 @@ const StartupForm = () => {
           name="description"
           className="startup-form_textarea"
           required
-          placeholder="Startup Description"
+          placeholder="Description"
         />
 
         {errors.description && (
@@ -119,7 +119,7 @@ const StartupForm = () => {
           name="category"
           className="startup-form_input"
           required
-          placeholder="Startup Category (Tech, Health, Education...)"
+          placeholder="Enter Category (Tech, Health, Education...)"
         />
 
         {errors.category && (
@@ -136,7 +136,7 @@ const StartupForm = () => {
           name="link"
           className="startup-form_input"
           required
-          placeholder="Startup Image URL"
+          placeholder="Content Image URL (ending with .png or .jpg etc.)"
         />
 
         {errors.link && <p className="startup-form_error">{errors.link}</p>}
@@ -144,7 +144,7 @@ const StartupForm = () => {
 
       <div data-color-mode="light">
         <label htmlFor="pitch" className="startup-form_label">
-          Pitch
+          Content
         </label>
 
         <MDEditor
@@ -156,7 +156,7 @@ const StartupForm = () => {
           style={{ borderRadius: 20, overflow: "hidden" }}
           textareaProps={{
             placeholder:
-              "Briefly describe your idea and what problem it solves",
+              "Briefly describe your content here",
           }}
           previewOptions={{
             disallowedElements: ["style"],
@@ -171,7 +171,7 @@ const StartupForm = () => {
         className="startup-form_btn text-white"
         disabled={isPending}
       >
-        {isPending ? "Submitting..." : "Submit Your Pitch"}
+        {isPending ? "Submitting..." : "Publish Your Content"}
         <Send className="size-6 ml-2" />
       </Button>
     </form>

@@ -30,7 +30,6 @@ export default async function Home({
           Submit Posts, Get Noticed, and Get Tipped
         </p>
 
-        {/* <SearchForm query={query} /> */}
       </section>
 
       <section className="section_container">
