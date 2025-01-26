@@ -60,7 +60,7 @@
   }
 
   .sub-heading {
-    @apply font-medium text-[20px] text-white max-w-2xl text-center break-words;
+    @apply font-medium text-[20px] text-white  text-center break-words;
   }
 
   .section_container {

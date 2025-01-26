@@ -21,23 +21,25 @@ export default async function Home({
 
   return (
     <>
-      <section className=" w-full min-h-[530px] bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% flex justify-center items-center flex-col py-10 px-6">
+      <section className="w-full min-h-screen bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% flex justify-center items-center flex-col py-10 px-6">
        
-     
-        <h1 className="heading ">
+        <div className="md:mt-20 flex flex-col justify-center">
+
+        <h1 className="heading">
           Tip Your Favorite Content <br />
           Creators and Get Noticed
         </h1>
 
-        <p className="sub-heading mb-4 !max-w-3xl">
+        <p className="sub-heading mb-4">
           Submit Posts, Get Noticed, and Get Tipped
         </p>
+        </div>
 
         <HeroVideoDialogDemo />
         {/* <SearchForm query={query} /> */}
       </section>
 
-      <section className="section_container">
+      <section className="section_container flex flex-col">
         <p className="text-30-semibold">
           {query ? `Search results for "${query}"` : "All Posts"}
         </p>
